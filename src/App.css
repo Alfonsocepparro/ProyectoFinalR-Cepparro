@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}   
+#root{
+    align-items: center;
+    justify-content: center;
+}
+html{
+    height: 1vh;
+}
+body{
+    width: 100%;
+}
+
+
+/*NAVBAR*/
+header{
+    background-color: #BBA99E;
+    height: 600px;
+    background-image: url(../src/assets/backHead.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    justify-content: space-between;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: center;
+  }
+  .menu{
+    display: flex;
+    list-style: none;
+    color: #ffffff;
+    font-family: Chloe;
+    text-decoration: none;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+  }
+  .navbar{
+    display: flex;
+    background-color: #BBA99E;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .menu-link{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 3rem;
+  }
+  .menu-link:hover, .menu-link.active {
+    text-decoration: underline #ffffff;
+  }
+  .contenedor-nav {
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    height: 100px;
+  }
+  .contenedor-nav > button{
+    border: none;
+    background-color: #BBA99E;
+  }
+  .carrito {
+    width: auto;
+    height: auto;
+    font-size: 3rem;
+    list-style: none;
+  }
+
+
+/*PRODUCTOS*/
+.container{
+    height: 1300px;
+    flex-wrap: wrap;
+  }
+  .productos {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    gap: 15px;
+    padding-block: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .producto{
+    border: none;
+    height: 500px;
+    background-color: #BBA99E;
+  }
+  
+  .producto > img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    padding: 10px;
+  }
+  .info{
+    font-size: 1.5rem;
+    font-family: Belleza;
+    color: #ffffff;
+    padding: 10px;
+    margin-top: 8px;
+    gap: 7px;
+  }
+  .ver-mas, .submit-button{
+    height: 50px;
+    width: 150px;
+    font-size: 2rem;
+    border-radius: 10%;
+    border: none;
+    background-color: #cdc1b9;
+    font-family: Belleza;
+    align-items : center;
+    margin-top: 30px;
+  }
+  .ver-mas > a{
+    color: black;
+  }
+  .ver-mas:hover, .submit-button:hover{
+    background-color: #BBA99E;
+    
+  }
+  .ver-mas > a:hover, .submit-button:hover{
+    color: #ffffff;
+  }
+/*PRODUCTO DETALLE*/
+.producto-detalle{
+    border: none;
+    height: 450px;
+    display: flex;
+    background-color: #BBA99E;
+    margin: 30px 100px 30px 100px;
+  }
+  .productodetalle > img {
+    width: 400px;
+    height: 400px;
+    padding: 30px;
+  }
+  .precio{
+    font-size: 3rem;
+  }
+  
+  .item-count {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .item-count button, .enviar, .agregar-al-carrito{
+    background-color: #cdc1b9;
+    border: 0;
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    border: 2px solid var(--clr-main);
+    transition: .2s;
+  }
+  
+  .item-count button:hover, .agregar-al-carrito:hover, .enviar:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .agregar-al-carrito, .enviar {
+    width: 60px;
+    height: auto;
+    font-family: Belleza;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: solid black 2px
+}
+/*              CARRITO                        */
+.numerito {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  button a {
+    text-decoration: none;
+  }
+  
+  .container {
+    height: auto;
+    margin: 40px 40px 0 40px;
+  }
+  
+  .prodCarrito {
+    margin: 40px;
+    padding-left: 25px;
+    border: dotted 4px #988a81;
+    font-family: Belleza;
+  }
+  
+  .prodCarrito > h3 {
+    font-size: 2.3rem;
+    text-decoration: underline solid 1.5px;
+  }
+  
+  .infoCarrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .infoCarrito > p {
+    font-size: 1.5rem;
+    font-family: Belleza;
+    font-weight: bold;
+  }
+  
+  .main-title, .preciototal {
+    font-family: Chloe;
+    font-size: 2.6rem;
+  }
+  
+  .carritoV {
+    margin-top: 40px;
+  }
+  
+  .botones {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .botones > button {
+    background-color: #BBA99E;
+  }
+  
+  .botones > button > a {
+    color: #ffffff;
+  }
+  
+  .logo {
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+  /*                 CHECKOUT               */
+  .checkout > h1{
+    text-align: center;
+    margin: 25px;
+  }
+  .npedido{
+    font-family: Belleza;
+    text-align: center;
+    font-size: 2rem;
+  }

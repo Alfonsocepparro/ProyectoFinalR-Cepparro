@@ -1,10 +1,17 @@
 import React from "react";
-import carrito from '../assets/carrito.png';
-const CartWidget = () =>{
-    return(
-        <div>
-            <img src={carrito} alt="carrito de compras" height="40px" width="40px"  />
-        </div>
+import { NavLink } from "react-router-dom";
+import { useCart } from "../context/CartContext";
+
+const CartWidget = () => {
+    const { totalItems } = useCart();
+    const cantidad = totalItems();
+
+    return (
+    <NavLink
+        to="/cart"
+        className={({ isActive }) => (isActive ? "carrito active" : "carrito")}>
+          🛒{cantidad > 0 && <span className="cart-count">{cantidad}</span>}
+    </NavLink>
     );
 };
 
