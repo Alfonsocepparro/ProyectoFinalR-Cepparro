@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { productos } from "../data/products.js";
-import { useEffect, useState } from "react";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../services/firestore.js";
 import ItemList from "../components/ItemList.jsx";
 
 const ItemListContainer = () => {
@@ -11,19 +11,22 @@ const ItemListContainer = () => {
 
     useEffect(() => {
     setLoading(true);
-    const getProductos = new Promise((resolve) => {
-        setTimeout(() => {
-        resolve(productos);
-        }, 1000);
-    });
 
-    getProductos.then((data) => {
-        const filtered = categoryId
-        ? data.filter((item) => item.categoria === categoryId)
-        : data;
-        setItems(filtered);
-        setLoading(false);
-    });
+    const productsCollection = collection(db, "products");
+    const q = categoryId
+        ? query(productsCollection, where("categoria", "==", categoryId))
+        : productsCollection;
+
+    getDocs(q)
+        .then((snapshot) => {
+        const productosFirebase = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+        setItems(productosFirebase);
+        })
+        .catch((error) => console.error("Error al cargar productos:", error))
+        .finally(() => setLoading(false));
     }, [categoryId]);
 
     return (
